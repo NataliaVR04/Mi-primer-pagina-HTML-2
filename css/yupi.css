@@ -1,0 +1,63 @@
+header{
+    background-image: url("../imgs/stray.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+header > nav{
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > nav > h3:first-child{
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1.5em;
+    justify-content: space-between;
+    font-size: 2.0em;
+}
+
+span[data-text="j"]::after{
+    content:attr(data-text);
+    color: transparent;
+    background-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082,#9400d3);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1.5em;
+    animation: rainbow 2s infinite;
+    
+}
+
+    @keyframes rainbow {
+        0% { background-position: 0 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 200% 50%; }     
+    }
+
+span[data-text] + span{ /*selecciona elsiguiente elemento, en este caso, busca el span siguiente*/
+    text-shadow: 0 2px 0 cyan, 2px 0 0 magenta, -2px -2px 0 yellow;
+}
+
+header > nav > menu {
+    display: flex;
+    gap: 1em;
+    font-weight: 600;
+    align-items: center;
+}
+
+header > nav > menu a{
+    color: white;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+header > nav > menu a:hover{ /*Para que se haga grande*/
+    font-size: 1.2em;
+    color: aqua;
+}
